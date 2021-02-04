@@ -18,13 +18,13 @@ public class Main {
 
                     int kvadratInput = 0;
 
-                    System.out.println(kvadrat.getDescription() + "Enter a integer:");
+                    System.out.println("\n" + kvadrat.getDescription() + "\nEnter a integer:");
                     String pressed = scan.nextLine();
                     try {
-                        int kvadratInput = Integer.parseInt(pressed);
+                        kvadratInput = Integer.parseInt(pressed);
                     }
                     catch (Exception e) {
-                        System.out.println("That is not a integer...");
+                        System.out.println("That is not an integer...\n");
                         break;
                     }
                 kvadrat.assignment(kvadratInput);
