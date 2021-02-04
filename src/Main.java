@@ -15,9 +15,21 @@ public class Main {
 
             switch (typed) {
                 case "1":
-                    System.out.println(kvadrat.getDescription());
-                kvadrat.assignment();
+
+                    int kvadratInput = 0;
+
+                    System.out.println(kvadrat.getDescription() + "Enter a integer:");
+                    String pressed = scan.nextLine();
+                    try {
+                        int kvadratInput = Integer.parseInt(pressed);
+                    }
+                    catch (Exception e) {
+                        System.out.println("That is not a integer...");
+                        break;
+                    }
+                kvadrat.assignment(kvadratInput);
                 break;
+
                 case "2":
                     System.out.println(bog.getDescription());
                     bog.assignment();
@@ -28,7 +40,7 @@ public class Main {
                     break;
                 default:
                     System.out.println("Try again");
-            }
+                }
             }
 
         }
