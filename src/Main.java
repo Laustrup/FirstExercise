@@ -2,11 +2,12 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         Kvadrat kvadrat = new Kvadrat();
-        Bog bog = new Bog();
-        Arrlist arrlist = new Arrlist();
+        Bog bog = new Bog("294927", "The case of the switch", "2021");
+        Bibliotek bibliotek = new Bibliotek();
+        //Arrlist arrlist = new Arrlist();
         Scanner scan = new Scanner(System.in);
 
         while (true) {
@@ -30,10 +31,22 @@ public class Main {
                 kvadrat.assignment(kvadratInput);
                 break;
 
+
                 case "2":
                     System.out.println(bog.getDescription());
-                    bog.assignment();
+                    bibliotek.printBooks();
+                    Thread.sleep(1500);
+                    System.out.println("\n\nComparing if new book's ISBN is identical with one in the library");
+                    for (int i = 0; i < 3; i++){
+                        System.out.print(". ");
+                        Thread.sleep(2000);
+                    }
+                    System.out.print("\nThe answer is: ");
+                    System.out.println(bibliotek.sameISBN(bog));
+                    System.out.println();
                     break;
+
+
                 case "3":
                     System.out.println(arrlist.getDescription());
                     arrlist.assignment();
@@ -42,10 +55,5 @@ public class Main {
                     System.out.println("Try again");
                 }
             }
-
         }
-        //bog, arraylist
-
     }
-
-}
