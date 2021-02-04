@@ -12,7 +12,7 @@ public class  Main {
 
 
         while (true) {
-            System.out.println("Press 1 for Kvadrat, 2 for bog or 3 for arraylist:");
+            System.out.println("Press 1 for Kvadrat, 2 for bog, 3 for arraylist or 0 to quit:");
             String typed = scan.nextLine();
 
             switch (typed) {
@@ -53,9 +53,12 @@ public class  Main {
                     String input = scan.nextLine();
                     arrlist.doesArraylistContainString(arr, input);
                     break;
+                case "0":
+                    System.exit(1);
                 default:
                     System.out.println("Try again");
                 }
+
             }
 
         }
