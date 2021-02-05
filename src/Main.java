@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -7,11 +8,11 @@ public class Main {
         Kvadrat kvadrat = new Kvadrat();
         Bog bog = new Bog("294927", "The case of the switch", "2021");
         Bibliotek bibliotek = new Bibliotek();
-        //Arrlist arrlist = new Arrlist();
+        Arrlist arrlist = new Arrlist();
         Scanner scan = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Press 1 for Kvadrat, 2 for bog or 3 for arraylist:");
+            System.out.println("Press 1 for Kvadrat, 2 for bog or 3 for arraylist or 0 to quit:");
             String typed = scan.nextLine();
 
             switch (typed) {
@@ -48,9 +49,25 @@ public class Main {
 
 
                 case "3":
+                    ArrayList<String> arr = new ArrayList<>();
+
+                    arr.add("Yeah");
+                    arr.add("Red Bull!");
+                    arr.add("coding");
+                    arr.add("is");
+                    arr.add("so");
+                    arr.add("much");
+                    arr.add("fun");
+
+
                     System.out.println(arrlist.getDescription());
-                    arrlist.assignment();
+                    System.out.println("Type a String and see if it matches: ");
+
+                    String input = scan.nextLine();
+                    arrlist.doesArraylistContainString(arr, input);
                     break;
+                case "0":
+                    System.exit(1);
                 default:
                     System.out.println("Try again");
                 }
